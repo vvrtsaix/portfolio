@@ -126,6 +126,6 @@ export const projects: Project[] = [
       "Crafted with care, this website stands as a platform to showcase my professional portfolio. Here, you can explore an array of my work and projects, providing a window into my skills and dedication to excellence.",
     tags: ["Astro", "React", "Tailwind", "Framer Motion"],
     imageUrl: "/images/portfolio.webp",
-    // href: "https://oblako.dev"
+    href: "https://portfolio-vvrtsaix.vercel.app"
   },
 ]
