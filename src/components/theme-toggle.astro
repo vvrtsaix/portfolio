@@ -1,0 +1,76 @@
+<theme-toggle>
+  <button
+    class="fixed top-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950"
+  >
+    <span class="sr-only">Dark theme</span>
+    <span class="block dark:hidden"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="w-6 h-6"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg></span
+    >
+    <span class="hidden dark:block"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="w-6 h-6"
+        viewBox="0 0 24 24"
+      >
+        <circle cx="12" cy="12" r="4"></circle>
+        <path
+          d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+        ></path>
+      </svg></span
+    >
+  </button>
+</theme-toggle>
+
+<script>
+  class ThemeToggle extends HTMLElement {
+    constructor() {
+      super();
+      if (
+        !localStorage.theme ||
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      const button = this.querySelector("button")!;
+
+      /** Set the theme to dark/light mode. */
+      const setTheme = (dark: boolean) => {
+        document.documentElement.classList[dark ? "add" : "remove"]("dark");
+        button.setAttribute("aria-pressed", String(dark));
+        localStorage.theme = dark ? "dark" : "light";
+      };
+
+      // Toggle the theme when a user clicks the button.
+      button.addEventListener("click", () => setTheme(!this.isDark()));
+
+      // Initialize button state to reflect current theme.
+      setTheme(this.isDark());
+    }
+
+    isDark() {
+      return document.documentElement.classList.contains("dark");
+    }
+  }
+  customElements.define("theme-toggle", ThemeToggle);
+</script>

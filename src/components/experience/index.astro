@@ -1,0 +1,10 @@
+---
+import SectionHeading from "../section-heading.astro";
+import Experiences from "./experiences";
+import { t } from "i18next";
+---
+
+<section id="experience" class="scroll-mt-28 mb-28 sm:mb-40 max-w-[53rem]">
+  <SectionHeading>{t("my-experience")}</SectionHeading>
+  <Experiences client:load />
+</section>

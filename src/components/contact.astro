@@ -1,0 +1,61 @@
+---
+import { motion } from "framer-motion";
+import SectionHeading from "./section-heading.astro";
+import { Trans } from "astro-i18next/components";
+import { t } from "i18next";
+---
+
+<motion.section
+  client:load
+  id="contact"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+  viewport={{ once: true }}
+  className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+>
+  <SectionHeading>{t("contact-me")}</SectionHeading>
+  <p class="text-gray-700 -mt-6 dark:text-white/80">
+    <Trans i18nKey="contact-email">
+      Please contact me directly at{" "}
+      <a class="underline" href="mailto:vvrtsaix.n@gmail.com">
+        vvrtsaix.n@gmail.com</a
+      >{" "}or through this form.
+    </Trans>
+  </p>
+  <form class="mt-10 flex flex-col dark:text-black">
+    <input
+      required
+      name="email"
+      type="email"
+      maxlength={500}
+      placeholder={t("your-email")}
+      class="h-14 px-4 rounded-lg border border-black/10 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:focus:outline-none focus:outline-black"
+    />
+    <textarea
+      required
+      name="message"
+      class="h-52 my-3 rounded-lg border border-black/10 p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:focus:outline-none focus:outline-black"
+      maxlength={5000}
+    >
+    </textarea>
+    <button
+      type="submit"
+      class="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
+    >
+      {t("submit")}{" "}
+      <svg
+        fill="none"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 text-xs opacity-70 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-1 lucide lucide-send"
+      >
+        <path d="m22 2-7 20-4-9-9-4Zm0 0L11 13"></path>
+      </svg>
+    </button>
+  </form>
+</motion.section>

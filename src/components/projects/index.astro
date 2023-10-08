@@ -1,0 +1,19 @@
+---
+import { projects } from "@/data";
+import SectionHeading from "../section-heading.astro";
+import ProjectItem from "./item";
+import { t } from "i18next";
+---
+
+<section id="projects" class="scroll-mt-28 mb-28">
+  <SectionHeading>{t("my-projects")}</SectionHeading>
+  <div class="flex flex-col gap-4">
+    {
+      projects.map((project, index) => (
+        <Fragment key={index}>
+          <ProjectItem client:load {...project} />
+        </Fragment>
+      ))
+    }
+  </div>
+</section>

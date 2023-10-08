@@ -1,0 +1,47 @@
+---
+import i18next from "i18next";
+import Header from "./header.astro";
+import Footer from "./footer.astro";
+import { HeadHrefLangs } from "astro-i18next/components";
+import ThemeToggle from "@/components/theme-toggle.astro";
+import LanguageToggle from "@/components/language-toggle.astro";
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang={i18next.language} class="!scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <HeadHrefLangs />
+  </head>
+  <body
+    class="bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90"
+  >
+    <div
+      class="bg-[#ecdbbf] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#947b62]"
+    >
+    </div>
+    <div
+      class="bg-[#d7fbf5] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#638394]"
+    >
+    </div>
+    <Header />
+    <LanguageToggle />
+    <ThemeToggle />
+    <slot />
+    <Footer />
+  </body>
+</html>

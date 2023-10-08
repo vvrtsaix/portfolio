@@ -1,0 +1,40 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Uurtsaikh Nyambat",
+    "email": "vvrtsaix.n@gmail.com"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vvrtsaix/portfolio"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^1.1.0",
+    "@astrojs/react": "^3.0.2",
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^3.0.12",
+    "astro-i18next": "^1.0.0-beta.21",
+    "framer-motion": "^10.16.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@types/react-vertical-timeline-component": "^3.3.4"
+  }
+}
