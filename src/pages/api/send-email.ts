@@ -7,11 +7,8 @@ import { getErrorMessage, validateString } from "@/utils";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const prerender = false;
-export const config = {
-  runtime: 'edge',
-};
 
-export const POST: APIRoute = async ({ request, redirect }) => {
+export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
   const email = formData.get("email");
   const message = formData.get("message");

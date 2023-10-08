@@ -4,12 +4,12 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
+
 import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: vercel(),
+  output: 'hybrid',
   site: 'https://portfolio-vvrtsaix.vercel.app',
   integrations: [tailwind(), react(), mdx(), sitemap({
     i18n: {
@@ -20,4 +20,5 @@ export default defineConfig({
       }
     }
   }), astroI18next()],
+  adapter: vercel()
 });
