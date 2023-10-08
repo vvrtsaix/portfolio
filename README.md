@@ -6,7 +6,6 @@ Personal portfolio project. [Preview](https://portfolio-vvrtsaix.vercel.app/)
 
 - NodeJS >= 18
 - [Typescript 5.2](https://www.typescriptlang.org/) - Types for JS
-- [Bun](https://bun.sh/docs/installation) - Package manager
 - [Astro](https://docs.astro.build/en/getting-started/) - Astro web framework
 - [Tailwind-CSS](https://tailwindcss.com/docs/guides/vite) - Utility css
 - [React 18](https://react.dev/) - UI library
@@ -32,7 +31,7 @@ Personal portfolio project. [Preview](https://portfolio-vvrtsaix.vercel.app/)
 ### 1. Environment Setup
 
 - Install nodejs >= v18 (recommended installing with [NVM](https://github.com/nvm-sh/nvm))
-- Install node module (`bun install`)
+- Install node module (`yarn install`)
 - Set up necessary variables in .env
 
   - env example
@@ -52,31 +51,31 @@ Personal portfolio project. [Preview](https://portfolio-vvrtsaix.vercel.app/)
 - Install node modules
 
   ```bash
-  bun install
+  yarn install
   ```
 
 - Start development service
 
   ```bash
-  bun dev
+  yarn dev
   ```
 
 - Build the project
 
   ```bash
-  bun build
+  yarn build
   ```
 
 - Start server with built files
 
   ```bash
-  bun preview
+  yarn preview
   ```
 
 - Generate i18n pages
 
   ```bash
-  bunx astro-i18next generate
+  npx astro-i18next generate
   ```
 
 ## Production and Development deployment
