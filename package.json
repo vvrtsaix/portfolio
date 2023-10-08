@@ -24,6 +24,9 @@
     "@astrojs/react": "^3.0.2",
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/vercel": "^5.0.2",
+    "@react-email/components": "^0.0.7",
+    "@react-email/tailwind": "0.0.8",
     "@tailwindcss/typography": "^0.5.10",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
@@ -32,6 +35,8 @@
     "framer-motion": "^10.16.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-hot-toast": "^2.4.1",
+    "resend": "^1.1.0",
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {

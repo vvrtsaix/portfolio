@@ -20,7 +20,9 @@ Personal portfolio project. [Preview](https://portfolio-vvrtsaix.vercel.app/)
   - components - general usage components
   - layouts - main layout
   - pages - all pages of platform
-  - data - main data source
+  - emails - email templates
+  - data.ts - main data source
+  - utils.ts - utility functions
 - astro-i18next.config.ts - Astro i18n config file
 - tailwind.config.cjs - Tailwind config file
 - astro.config.mjs - Astro config file
@@ -31,6 +33,13 @@ Personal portfolio project. [Preview](https://portfolio-vvrtsaix.vercel.app/)
 
 - Install nodejs >= v18 (recommended installing with [NVM](https://github.com/nvm-sh/nvm))
 - Install node module (`bun install`)
+- Set up necessary variables in .env
+
+  - env example
+
+  ```env
+  RESEND_API_KEY=******
+  ```
 
 ### 2. Recommended vscode extensions
 

@@ -1,0 +1,28 @@
+---
+import { motion } from "framer-motion";
+import SectionHeading from "../section-heading.astro";
+import { Trans } from "astro-i18next/components";
+import { t } from "i18next";
+import ContactForm from "./form";
+---
+
+<motion.section
+  client:load
+  id="contact"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+  viewport={{ once: true }}
+  className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+>
+  <SectionHeading>{t("contact-me")}</SectionHeading>
+  <p class="text-gray-700 -mt-6 dark:text-white/80">
+    <Trans i18nKey="contact-email">
+      Please contact me directly at{" "}
+      <a class="underline" href="mailto:vvrtsaix.n@gmail.com">
+        vvrtsaix.n@gmail.com</a
+      >{" "}or through this form.
+    </Trans>
+  </p>
+  <ContactForm client:load />
+</motion.section>
