@@ -13,6 +13,13 @@ export type Project = {
   href?: string
 }
 
+export type Certificate = {
+  name: string
+  org: string
+  href?: string
+  imageUrl: string
+}
+
 export const experiences: Experience[] = [{
   date: "Feb 2023 - Now",
   company: "Monosolution LLC",
@@ -69,6 +76,31 @@ export const skills = [
   "Cloud Solutions Architect (3 years)",
   "System Architecture (3 years)",
   "DevOps (3 years)",
+] as const;
+
+export const technologies = [
+  "GoLang (4 years)",
+  "Javascript (5 years)",
+  "NextJS, React (5 years)",
+  "TailwindCSS (3 years)",
+  "Python (2 years)",
+  "Svelte, Vue (2 years)",
+  "React Native (5 years)",
+  "Flutter (3 years)",
+  "PHP (3 years)",
+  "Java (2 years)",
+  "Rust (1 years)",
+  "DotNet (1 years)",
+  "Elastic search (3 years)",
+  "Kubernetes (3 years)",
+  "AWS (3 years)",
+  "Docker (4 years)",
+  "RDS, SQL (5 years)",
+  "Postgres (5 years)",
+  "MongoDB (1 years)",
+  "GraphQL (4 years)",
+  "gRPC (1 years)",
+  "MQTT, RabbitMQ (2 years)",
 ] as const;
 
 export const projects: Project[] = [
@@ -129,3 +161,15 @@ export const projects: Project[] = [
     href: "https://portfolio-vvrtsaix.vercel.app"
   },
 ]
+
+export const certifications: Certificate[] = [{
+  name: "AWS Certified Solutions Architect - Associate",
+  org: "Amazon Web Services",
+  href: "https://www.credly.com/badges/d6e42bf3-8f7e-4ec5-b38b-6a29cea68361?source=linked_in_profile",
+  imageUrl: "https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png"
+}, {
+  name: "CKA: Certified Kubernetes Administrator",
+  org: "Linux Foundation",
+  href: "https://www.credly.com/badges/4344e721-048d-47e5-bbd2-573d36a6643a?source=linked_in_profile",
+  imageUrl: "https://images.credly.com/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png"
+}]
