@@ -25,62 +25,65 @@ export const experiences: Experience[] = [{
   company: "Monosolution LLC",
   position: "Senior Lead Software Developer",
   details: [
-    "Collaborated with project managers to select ambitious but realistic coding milestones for pre- release software project development.",
-    "Collaborated on stages of the system development lifecycle, from requirement gathering to production releases.",
-    "Developed software for web and mobile operating systems.",
-    "Implemented a microservices architecture that improved system modularity and reduced dependencies between components",
-    "Conducted code reviews and mentored junior developers to improve code quality and ensure adherence to best practices",
+    "As a Development Team Lead, I spearheaded two projects. The first, 'Detect HCC,' is a Clinical Research Management System has real-time communication (including chat, video, and phone), file system, and comprehensive clinical study capabilities. The second project, the 'Business Management System (BMS),' boasts features such as communication tools, file system, company newsfeed, HR, and CRM.",
+    "I trained my peers and used DevOps CI/CD.",
+    "Technologies: NodeJS, GraphQL, TailwindCSS, React, GoLang, NextJS, Flutter, MQTT and Microservice",
   ],
 }, {
   date: "Feb 2022 - Feb 2023",
-  company: "FIBO GLOBAL LLC",
+  company: "Fibo Cloud Pte Ltd",
   position: "Chief Cloud Architect",
   details: [
-    "Displayed a sound understanding of standard networking protocols, virtual networks, and load balancing.",
-    "Identified and remedied single points of failure and security risks.",
-    "Defined cloud architecture for both hybrid and non-hybrid cloud solutions.",
-    "Interfaced directly with customers, stakeholders, and end-users regarding capability architectures, requirements, use cases, and stories to derive, develop, and decompose next-cycle updates and specifications.",
-    "Worked with software development and testing team members to design and develop robust solutions to meet client requirements for functionality, scalability, and performance.",
-    "Reviewed project specifications and designed technology solutions that met or exceeded performance expectations.",
+    "My role involved researching and developing features and services for public clouds, including cloud.mn and cloud.ttc.kz. I made significant contributions to the creation of Managed Kubernetes Service and App platform, as well as Simplehost for PHP-based applications.",
+    "I provided valuable DevOps and cloud service consulting services to other companies.",
+    "I instructed courses on Kubernetes and container technology.",
+  ],
+}, {
+  date: "Jun 2021 - Feb 2023",
+  company: "TECH PARTNERS",
+  position: "Senior Software Engineer",
+  details: [
+    "I've had the privilege of working on diverse projects, including leading the development team for the travel website ITrip.mn, contributing to the Yuna restaurant app, and developing the student management system for Citi University.",
+    "Technologies: GoLang, React, NextJS, Flutter, tRPC, gRPC, TailwindCSS and DotNet",
   ],
 }, {
   date: "Jun 2021 - Feb 2022",
-  company: "FIBO GLOBAL LLC",
+  company: "Fibo Cloud Pte Ltd",
   position: "Senior Software Engineer",
   details: [
-    "Coordinated efficient large-scale software deployments.",
-    "Evaluated and improved the development work of other developers on the team, working to provide training, constructive criticism, and knowledge transfer.",
-    "Evaluated project requirements and specifications and developed software applications that surpassed client expectations.",
-    "Designed updates to existing software to meet changing customer demands.",
+    "I've played a pivotal role in diverse projects, including the Fibo Stack Private Cloud Management System, the Mongolian Public Cloud Service (Cloud.mn), and consulting on public cloud (AWS, GCP, Azure) and DevOps.",
+    "Technologies: AWS, GCP, Docker, Kubernetes, Linux, Openstack, Jenkins, Gitlab CI, GoLang, gRPC, React and Python",
   ],
 }, {
   date: "Jul 2020 - Dec 2020",
   company: "Eclinic",
   position: "Full Stack Engineer",
   details: [
-    "Paired with fellow engineers to brainstorm ideas, debug problems, and review code.",
-    "Performed development, debugging, optimization, and automation to support the implementation of products and applications.",
+    "I was part of a three-engineer team that developed an ERP system for a hospital.",
+    "Technologies: Laravel (PHP), Vue (Javascript) and Java spring (Java)",
   ],
 }, {
   date: "Jun 2020 - Jul 2020",
   company: "Eclinic",
   position: "Full Stack Engineer",
   details: [
-    "Maintained expansive knowledge of widely accepted design principles for developing applications within React Native environments.",
+    "I've worked on two React Native applications. The first is a mobile job app with separate interfaces for employees and employers. It's powered by a WordPress backend with GraphQL integration. The second is a nurse rental app.",
+    "Technologies: React Native, Wordpress and GraphQL",
   ],
 }]
 
 export const skills = [
   "Software development (5 years)",
-  "Team management (3 years)",
-  "Cloud Solutions Architect (3 years)",
-  "System Architecture (3 years)",
   "DevOps (3 years)",
+  "System Architecture (3 years)",
+  "Cloud Solutions Architect (3 years)",
+  "Team management (3 years)",
 ] as const;
 
 export const technologies = [
   "GoLang (4 years)",
   "Javascript (5 years)",
+  "Typescript (3 years)",
   "NextJS, React (5 years)",
   "TailwindCSS (3 years)",
   "Python (2 years)",
@@ -117,7 +120,7 @@ export const projects: Project[] = [
     description:
       "Oblako Dev is a straightforward deployment solution, akin to Vercel and Render. It seamlessly integrates with GitHub and GitLab, automating deployments for various programming languages and frameworks. Additionally, it offers hassle-free PHP hosting. I took on a solo development role for the entire system, spanning frontend, backend, server management, and Kubernetes orchestration.",
     tags: ["Kubernetes", "NextJS", "tRPC", "gRPC", "GoLang", "BuildKit"],
-    imageUrl: "/images/portfolio.webp",
+    imageUrl: "/images/oblako-dev.webp",
     href: "https://oblako.dev"
   },
   {
