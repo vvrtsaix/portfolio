@@ -64,8 +64,8 @@ export const experiences: Experience[] = [{
   ],
 }, {
   date: "Jun 2020 - Jul 2020",
-  company: "Eclinic",
-  position: "Full Stack Engineer",
+  company: "Codocore",
+  position: "Mobile Application Developer",
   details: [
     "I've worked on two React Native applications. The first is a mobile job app with separate interfaces for employees and employers. It's powered by a WordPress backend with GraphQL integration. The second is a nurse rental app.",
     "Technologies: React Native, Wordpress and GraphQL",
