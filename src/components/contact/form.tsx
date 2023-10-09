@@ -35,6 +35,7 @@ const ContactForm: FC = () => {
         <textarea
           required
           name="message"
+          aria-label="message"
           className="h-52 my-3 rounded-lg border border-black/10 p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:focus:outline-none focus:outline-black"
           maxLength={5000}
         >

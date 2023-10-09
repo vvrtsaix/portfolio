@@ -169,10 +169,10 @@ export const certifications: Certificate[] = [{
   name: "AWS Certified Solutions Architect - Associate",
   org: "Amazon Web Services",
   href: "https://www.credly.com/badges/d6e42bf3-8f7e-4ec5-b38b-6a29cea68361?source=linked_in_profile",
-  imageUrl: "https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png"
+  imageUrl: "/images/aws-sa-a.webp"
 }, {
   name: "CKA: Certified Kubernetes Administrator",
   org: "Linux Foundation",
   href: "https://www.credly.com/badges/4344e721-048d-47e5-bbd2-573d36a6643a?source=linked_in_profile",
-  imageUrl: "https://images.credly.com/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png"
+  imageUrl: "/images/cka.webp"
 }]
