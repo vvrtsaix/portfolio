@@ -47,7 +47,7 @@ export const experiences: Experience[] = [{
     "Technologies: GoLang, React, NextJS, Flutter, tRPC, gRPC, TailwindCSS and DotNet",
   ],
 }, {
-  date: "Jun 2021 - Feb 2022",
+  date: "Jun 2020 - Feb 2022",
   company: "Fibo Cloud Pte Ltd",
   position: "Senior Software Engineer",
   details: [
@@ -55,7 +55,7 @@ export const experiences: Experience[] = [{
     "Technologies: AWS, GCP, Docker, Kubernetes, Linux, Openstack, Jenkins, Gitlab CI, GoLang, gRPC, React and Python",
   ],
 }, {
-  date: "Jul 2020 - Dec 2020",
+  date: "Jul 2019 - Dec 2019",
   company: "Eclinic",
   position: "Full Stack Engineer",
   details: [
@@ -63,7 +63,7 @@ export const experiences: Experience[] = [{
     "Technologies: Laravel (PHP), Vue (Javascript) and Java spring (Java)",
   ],
 }, {
-  date: "Jun 2020 - Jul 2020",
+  date: "Jun 2019 - Jul 2019",
   company: "Codocore",
   position: "Mobile Application Developer",
   details: [
