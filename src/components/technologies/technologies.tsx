@@ -26,7 +26,7 @@ const Technologies: FC = () => (
                 },
               }),
             }}
-            className="bg-white rounded-xl px-4 py-2 dark:bg-white/10 dark:text-white/80"
+            className="bg-gray-100 hover:bg-gray-200 rounded-xl px-4 py-2 dark:bg-white/5 dark:text-white cursor-pointer dark:hover:bg-white/10"
           >
             {skill}
           </motion.li>

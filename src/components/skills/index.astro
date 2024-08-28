@@ -1,13 +1,12 @@
 ---
 import SectionHeading from "../section-heading.astro";
 import Skills from "./skills.tsx";
-import { t } from "i18next";
 ---
 
 <section
   id="skills"
   class="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
 >
-  <SectionHeading>{t("my-skills")}</SectionHeading>
+  <SectionHeading>My Skills</SectionHeading>
   <Skills client:load />
 </section>

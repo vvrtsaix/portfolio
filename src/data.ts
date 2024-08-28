@@ -21,7 +21,15 @@ export type Certificate = {
 }
 
 export const experiences: Experience[] = [{
-  date: "Feb 2023 - Now",
+  date: "Nov 2023 - Now",
+  company: "Zerotech",
+  position: "Senior Software Developer",
+  details: [
+    "As a Development Team Lead, I spearheaded four projects.",
+    "Technologies: NodeJS, TailwindCSS, React, GoLang, NextJS and Microservice",
+  ],
+}, {
+  date: "Feb 2023 - Nov 2023",
   company: "Monosolution LLC",
   position: "Senior Lead Software Developer",
   details: [
@@ -73,37 +81,36 @@ export const experiences: Experience[] = [{
 }]
 
 export const skills = [
-  "Software development (5 years)",
-  "DevOps (3 years)",
-  "System Architecture (3 years)",
-  "Cloud Solutions Architect (3 years)",
+  "Software development (6 years)",
+  "DevOps (4 years)",
+  "System Architecture (4 years)",
+  "Cloud Solutions Architect (4 years)",
   "Team management (3 years)",
 ] as const;
 
 export const technologies = [
-  "GoLang (4 years)",
-  "Javascript (5 years)",
-  "Typescript (3 years)",
-  "NextJS, React (5 years)",
-  "TailwindCSS (3 years)",
-  "Python (2 years)",
-  "Svelte, Vue (2 years)",
-  "React Native (5 years)",
-  "Flutter (3 years)",
+  "GoLang (5 years)",
+  "Javascript (6 years)",
+  "Typescript (4 years)",
+  "NextJS, React (6 years)",
+  "TailwindCSS (4 years)",
+  "Svelte, Vue (3 years)",
+  "React Native (6 years)",
+  "Flutter (4 years)",
   "PHP (3 years)",
   "Java (2 years)",
   "Rust (1 years)",
   "DotNet (1 years)",
-  "Elastic search (3 years)",
-  "Kubernetes (3 years)",
-  "AWS (3 years)",
-  "Docker (4 years)",
+  "Elastic search (4 years)",
+  "Kubernetes (4 years)",
+  "AWS (4 years)",
+  "Docker (5 years)",
   "RDS, SQL (5 years)",
-  "Postgres (5 years)",
+  "Postgres (6 years)",
   "MongoDB (1 years)",
   "GraphQL (4 years)",
-  "gRPC (1 years)",
-  "MQTT, RabbitMQ (2 years)",
+  "gRPC (2 years)",
+  "MQTT, RabbitMQ (3 years)",
 ] as const;
 
 export const projects: Project[] = [

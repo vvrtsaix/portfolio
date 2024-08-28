@@ -52,20 +52,20 @@ const HistoryItem: FC<{ index: number; data: Experience }> = ({ index, data }) =
           <div className="text-base xl:text-lg">
             {data.company}
           </div>
-          <div className="text-xs xl:text-sm text-gray-700 dark:text-white/70">
+          <div className="text-xs xl:text-sm text-gray-700 dark:text-white/90">
             {data.date}
           </div>
         </div>
       </motion.div>
       <motion.article
-        className="ml-10 flex flex-col items-center bg-gray-100 border border-black/5 rounded-lg hover:bg-gray-200 transition dark:text-white dark:bg-white/10 dark:hover:bg-white/20 p-4 xl:ml-14 xl:flex-row xl:p-6"
+        className="ml-10 flex flex-col bg-gray-100 border border-black/5 rounded-lg hover:bg-gray-200 transition dark:text-white dark:bg-white/5 dark:hover:bg-white/10 p-4 xl:ml-14 xl:flex-row xl:p-6"
         style={{ scale: scaleProgress, opacity: opacityProgress }}
       >
         <div className="flex flex-1 flex-col justify-center">
           <h3 className="text-lg font-bold xl:text-xl">
             {data.position}
           </h3>
-          <ul className="mt-2 text-gray-700 dark:text-white/70 leading-relaxed list-disc list-inside">
+          <ul className="mt-2 text-gray-700 dark:text-white/90 leading-relaxed list-disc list-inside">
             {data.details.map((detail, index) => (<li key={index}>{detail}</li>))}
           </ul>
         </div>

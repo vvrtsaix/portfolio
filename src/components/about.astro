@@ -1,7 +1,6 @@
 ---
 import SectionHeading from "./section-heading.astro";
 import { motion } from "framer-motion";
-import { t } from "i18next";
 ---
 
 <motion.section
@@ -12,6 +11,6 @@ import { t } from "i18next";
   transition={{ delay: 0.175 }}
   id="about"
 >
-  <SectionHeading>{t("about-me")}</SectionHeading>
-  <p class="mb-3">{t("about-detail")}</p>
+  <SectionHeading>About me</SectionHeading>
+  <p class="mb-3">With six years of experience in Software Development and DevOps, I've honed my skills across a diverse range of applications and systems. My passion for collaboration and strong software development abilities have made me a respected team player. I hold a particular interest in backend, full-stack development, and DevOps engineering.</p>
 </motion.section>

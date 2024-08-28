@@ -2,18 +2,15 @@
 import { certifications } from "@/data";
 import SectionHeading from "../section-heading.astro";
 import ProjectItem from "./item";
-import { t } from "i18next";
 ---
 
 <section id="certifications" class="scroll-mt-28 mb-28">
-  <SectionHeading>{t("my-certifications")}</SectionHeading>
+  <SectionHeading>My Certifications</SectionHeading>
   <div class="flex flex-col gap-4">
-    {
-      certifications.map((cert, index) => (
-        <Fragment key={index}>
-          <ProjectItem client:load {...cert} />
-        </Fragment>
-      ))
-    }
+    {certifications.map((cert, index) => (
+      <Fragment key={index}>
+        <ProjectItem client:load {...cert} />
+      </Fragment>
+    ))}
   </div>
 </section>

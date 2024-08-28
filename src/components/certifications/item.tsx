@@ -28,16 +28,17 @@ const CertificateItem = ({
       referrerPolicy="no-referrer"
       className="group mb-3 sm:mb-8 last:mb-0"
     >
-      <section className="bg-gray-100 max-w-[64rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
+      <section className="bg-gray-100 max-w-[64rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/5 dark:hover:bg-white/10">
         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[80%] flex flex-col h-full sm:group-even:ml-[18rem]">
           <h3 className="text-2xl font-semibold">{name}</h3>
-          <p className="mt-2 mb-4 leading-relaxed text-gray-700 dark:text-white/70">
+          <p className="mt-2 mb-4 leading-relaxed text-gray-700 dark:text-white/90">
             {org}
           </p>
         </div>
         <img
           alt={name}
           src={imageUrl}
+          loading="lazy"
           className="absolute top-8 -right-8 w-32 sm:w-40 rounded-t-lg
             transition 
             group-hover:scale-[1.04]
