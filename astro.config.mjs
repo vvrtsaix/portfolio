@@ -1,14 +1,13 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
-import react from "@astrojs/react";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 
-// https://astro.build/config
+// Static by default; routes with `export const prerender = false` run on Vercel functions.
 export default defineConfig({
-  output: 'hybrid',
   site: 'https://portfolio-vvrtsaix.vercel.app',
-  integrations: [tailwind(), react(), sitemap()],
+  integrations: [sitemap()],
+  vite: { plugins: [tailwindcss()] },
   adapter: vercel()
 });

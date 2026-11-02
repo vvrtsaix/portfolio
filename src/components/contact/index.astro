@@ -1,6 +1,6 @@
 ---
 import Section from "../section-heading.astro";
-import ContactForm from "./form";
+import ContactForm from "./form.astro";
 
 const channels = [
   { label: "Email", text: "vvrtsaix.n@gmail.com", href: "mailto:vvrtsaix.n@gmail.com" },
@@ -21,7 +21,7 @@ const channels = [
           channels.map((c) => (
             <div class="grid grid-cols-[6.5rem_1fr] gap-3 border-t border-rule py-2">
               <dt class="text-muted">{c.label}</dt>
-              <dd class="min-w-0 break-words">
+              <dd class="min-w-0 wrap-break-word">
                 <a
                   href={c.href}
                   class="underline"
@@ -35,6 +35,6 @@ const channels = [
         }
       </dl>
     </div>
-    <ContactForm client:visible />
+    <ContactForm />
   </div>
 </Section>

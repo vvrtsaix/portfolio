@@ -1,3 +1,10 @@
+import itripMn from "@/assets/images/itrip-mn.webp";
+import absoluteMn from "@/assets/images/absolute-mn.webp";
+import absoluteStudentApp from "@/assets/images/absolute-student-app.webp";
+import yunaRestaurant from "@/assets/images/yuna-restaurant.webp";
+import awsSaA from "@/assets/images/aws-sa-a.webp";
+import cka from "@/assets/images/cka.webp";
+
 export type Experience = {
   date: string
   company: string
@@ -10,7 +17,8 @@ export type Project = {
   title: string
   description: string
   tags: string[]
-  imageUrl: string
+  image: ImageMetadata
+  imageAlt: string
   href?: string
 }
 
@@ -18,7 +26,7 @@ export type Certificate = {
   name: string
   org: string
   href?: string
-  imageUrl: string
+  image: ImageMetadata
 }
 
 export type Capability = { name: string; years: number }
@@ -127,7 +135,8 @@ export const projects: Project[] = [
     description:
       "Travel booking for flights, tours, hotels, trains and travel insurance. Led the development team and wrote most of the backend.",
     tags: ["Next.js", "Node.js", "Go", ".NET", "MQTT", "Third-party APIs"],
-    imageUrl: "/images/itrip-mn.webp",
+    image: itripMn,
+    imageAlt: "ITrip.mn homepage: flight search form over a photo of hot-air balloons at sunrise",
     href: "https://itrip.mn/"
   },
   {
@@ -135,7 +144,8 @@ export const projects: Project[] = [
     description:
       "Website for the Absolute English course, built on Strapi CMS, Next.js and MinIO object storage.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Strapi CMS"],
-    imageUrl: "/images/absolute-mn.webp",
+    image: absoluteMn,
+    imageAlt: "Absolute.mn homepage: headline “Let us be your bridge to the Future” beside two students holding a vocabulary book",
     href: "https://absolute.mn"
   },
   {
@@ -143,7 +153,8 @@ export const projects: Project[] = [
     description:
       "Student app for Absolute English: video and audio lessons, reading materials, quizzes, news and weekly schedules.",
     tags: ["React Native", "Reanimated", "Go", "Next.js", "MinIO"],
-    imageUrl: "/images/absolute-student-app.webp",
+    image: absoluteStudentApp,
+    imageAlt: "Absolute Student App home screen on an iPhone: video lesson player, course shortcuts and weekly schedule",
     href: "https://apps.apple.com/us/app/absolute-student-app/id1658466540"
   },
   {
@@ -151,7 +162,8 @@ export const projects: Project[] = [
     description:
       "Menu browsing, ordering and promotions for Yuna restaurants. Built the admin dashboard, backend services and mobile app.",
     tags: ["Flutter", "Go", "Next.js", "MinIO"],
-    imageUrl: "/images/yuna-restaurant.webp",
+    image: yunaRestaurant,
+    imageAlt: "Yuna restaurant app home screen on an iPhone: dish carousel and service shortcuts for delivery, table booking and branches",
     href: "https://apps.apple.com/mm/app/yuna-restaurant/id1625573111?platform=iphone"
   },
 ]
@@ -160,10 +172,10 @@ export const certifications: Certificate[] = [{
   name: "AWS Certified Solutions Architect - Associate",
   org: "Amazon Web Services",
   href: "https://www.credly.com/badges/d6e42bf3-8f7e-4ec5-b38b-6a29cea68361?source=linked_in_profile",
-  imageUrl: "/images/aws-sa-a.webp"
+  image: awsSaA
 }, {
   name: "CKA: Certified Kubernetes Administrator",
   org: "Linux Foundation",
   href: "https://www.credly.com/badges/4344e721-048d-47e5-bbd2-573d36a6643a?source=linked_in_profile",
-  imageUrl: "/images/cka.webp"
+  image: cka
 }]

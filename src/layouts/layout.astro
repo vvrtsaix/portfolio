@@ -1,6 +1,10 @@
 ---
 import Header from "./header.astro";
 import Footer from "./footer.astro";
+import "@/styles/global.css";
+import archivoUrl from "@/assets/fonts/archivo-latin.woff2?url";
+import { getImage } from "astro:assets";
+import profile from "@/assets/images/profile.webp";
 
 type Props = {
   title: string;
@@ -8,6 +12,8 @@ type Props = {
 };
 
 const { title, description } = Astro.props;
+// JPEG: some link-preview crawlers still skip WebP.
+const ogImage = await getImage({ src: profile, width: 384, format: "jpeg" });
 ---
 
 <!doctype html>
@@ -21,17 +27,15 @@ const { title, description } = Astro.props;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.site} />
+    <meta property="og:image" content={new URL(ogImage.src, Astro.site)} />
+    <meta property="og:image:alt" content="Portrait of Uurtsaikh Nyambat" />
+    <meta name="twitter:card" content="summary" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap"
-    />
+    <link rel="preload" href={archivoUrl} as="font" type="font/woff2" crossorigin />
     <meta name="generator" content={Astro.generator} />
     <!-- Runs before paint so the saved/system theme never flashes. -->
     <script is:inline>

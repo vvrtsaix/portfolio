@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { certifications, experiences } from "@/data";
+import profile from "@/assets/images/profile.webp";
 
 const START_YEAR = 2019;
 const years = new Date().getFullYear() - START_YEAR;
@@ -14,11 +15,11 @@ const current = experiences[0];
       Uurtsaikh<br />Nyambat
     </h1>
     <Image
-      width="384"
-      height="384"
+      src={profile}
+      width={192}
+      densities={[1, 2]}
       loading="eager"
       alt="Portrait of Uurtsaikh Nyambat"
-      src="/images/profile.webp"
       class="mb-2 hidden h-36 w-28 flex-none object-cover sm:block lg:h-48 lg:w-36"
     />
   </div>
@@ -50,7 +51,7 @@ const current = experiences[0];
               {
                 certifications.map((cert) => (
                   <li class="flex items-center gap-3">
-                    <img src={cert.imageUrl} alt="" width="32" height="32" class="h-8 w-8 object-contain" />
+                    <Image src={cert.image} alt="" width={32} densities={[1, 2]} class="h-8 w-8 object-contain" />
                     <a href={cert.href} target="_blank" rel="noopener noreferrer" class="underline">
                       {cert.name}
                     </a>

@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-paper: rgb(var(--paper));
+  --color-surface: rgb(var(--surface));
+  --color-ink: rgb(var(--ink));
+  --color-muted: rgb(var(--muted));
+  --color-rule: rgb(var(--rule));
+  --color-accent: rgb(var(--accent));
+
+  --font-sans: Archivo, ui-sans-serif, system-ui, sans-serif;
+}
+
+/* shortcut: latin subset only, accented/non-latin text falls back to system-ui; add the latin-ext file if content needs it. */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-latin.woff2") format("woff2");
+}

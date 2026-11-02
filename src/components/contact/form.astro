@@ -1,0 +1,54 @@
+---
+const field =
+  "mt-1 w-full border border-rule bg-surface px-4 py-3 text-ink placeholder:text-muted focus:border-accent";
+---
+
+<form id="contact-form" class="flex flex-col gap-4">
+  <label class="block">
+    <span class="text-muted">Your email</span>
+    <input required name="email" type="email" autocomplete="email" maxlength="500" class={field} />
+  </label>
+  <label class="block">
+    <span class="text-muted">Message</span>
+    <textarea required name="message" rows="7" maxlength="5000" class={field}></textarea>
+  </label>
+  <div class="flex flex-wrap items-center gap-4">
+    <button
+      type="submit"
+      class="bg-ink px-5 py-3 font-semibold text-paper hover:bg-accent disabled:opacity-60"
+    >
+      Send message
+    </button>
+    <p id="contact-status" role="status" class="text-muted data-[error]:text-red-600"></p>
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const status = document.getElementById("contact-status")!;
+  const button = form.querySelector("button")!;
+
+  const show = (text: string, error: boolean) => {
+    status.textContent = text;
+    status.toggleAttribute("data-error", error);
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    button.disabled = true;
+    button.textContent = "Sending…";
+    show("", false);
+    try {
+      const response = await fetch("/api/send-email", { method: "POST", body: new FormData(form) });
+      // Non-JSON bodies (platform 413/504 pages) still get a readable message.
+      const data = await response.json().catch(() => ({}));
+      show(data.message ?? "Message not sent. Please try again later.", !response.ok);
+      if (response.ok) form.reset();
+    } catch {
+      show("Message not sent. Check your connection and try again.", true);
+    } finally {
+      button.disabled = false;
+      button.textContent = "Send message";
+    }
+  });
+</script>
