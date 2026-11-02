@@ -1,3 +1,6 @@
+# packages: required by pnpm 9 (Vercel default for lockfile v9); "." is just the root project.
+packages:
+  - "."
 allowBuilds:
   esbuild: true
   sharp: true
