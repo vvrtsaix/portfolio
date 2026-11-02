@@ -1,26 +1,19 @@
 ---
 import Layout from "@/layouts/layout.astro";
 import Intro from "@/components/intro.astro";
-import About from "@/components/about.astro";
-import SectionDivider from "@/components/section-divider.astro";
+import Capabilities from "@/components/capabilities.astro";
+import Experience from "@/components/experience/index.astro";
 import Projects from "@/components/projects/index.astro";
-import Skills from "@/components/skills/index.astro";
-import Technologies from "@/components/technologies/index.astro";
-import Experiences from "@/components/experience/index.astro";
 import Contact from "@/components/contact/index.astro";
-import Certifications from "@/components/certifications/index.astro";
 ---
 
-<Layout title="Uurstaikh Nyambat Portfolio.">
-  <main class="flex flex-col items-center px-4">
-    <Intro />
-    <SectionDivider />
-    <About />
-    <Skills />
-    <Technologies />
-    <Certifications />
-    <Experiences />
-    <Projects />
-    <Contact />
-  </main>
+<Layout
+  title="Uurtsaikh Nyambat, senior software developer"
+  description="Uurtsaikh Nyambat is a senior software developer in Ulaanbaatar building payment, loyalty and cloud platforms and the apps on top of them. CKA and AWS Solutions Architect certified."
+>
+  <Intro />
+  <Capabilities />
+  <Experience />
+  <Projects />
+  <Contact />
 </Layout>

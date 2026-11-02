@@ -1,0 +1,76 @@
+---
+const links = [
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-rule bg-paper/90 backdrop-blur">
+  <div class="mx-auto flex h-14 max-w-6xl items-center gap-6 px-4 sm:px-8">
+    <a href="#top" class="type-sub mr-auto text-lg no-underline">Uurtsaikh. N</a>
+    <nav aria-label="Sections">
+      <ul class="flex gap-5 text-[0.9375rem]">
+        {
+          links.map((link) => (
+            <li class={link.href === "#contact" ? "" : "hidden md:block"}>
+              <a href={link.href} class="text-muted hover:text-ink aria-[current=true]:text-ink aria-[current=true]:underline aria-[current=true]:decoration-accent aria-[current=true]:decoration-2 aria-[current=true]:underline-offset-[0.5em]">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <button
+      id="theme-toggle"
+      type="button"
+      class="-mr-2 grid h-10 w-10 place-items-center text-muted hover:text-ink"
+    >
+      <span class="sr-only">Dark theme</span>
+      <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg>
+      <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById("theme-toggle")!;
+  const root = document.documentElement;
+  const sync = () => button.setAttribute("aria-pressed", String(root.classList.contains("dark")));
+  sync();
+  button.addEventListener("click", () => {
+    const dark = root.classList.toggle("dark");
+    try {
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    } catch {}
+    sync();
+  });
+
+  // Mark the nav link for the section crossing the upper third of the viewport.
+  const navLinks = [...document.querySelectorAll<HTMLAnchorElement>('nav[aria-label="Sections"] a')];
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        for (const a of navLinks) {
+          if (a.hash === `#${entry.target.id}`) a.setAttribute("aria-current", "true");
+          else a.removeAttribute("aria-current");
+        }
+      }
+    },
+    { rootMargin: "-30% 0px -69% 0px" },
+  );
+  for (const a of navLinks) {
+    const section = document.querySelector(a.hash);
+    if (section) observer.observe(section);
+  }
+  // Hero has no nav link: clear the mark when back at the top.
+  observer.observe(document.getElementById("top")!);
+</script>

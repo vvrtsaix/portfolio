@@ -1,5 +1,10 @@
-<footer class="mb-24 px-4 text-center text-gray-500">
-  <small class="mb-2 block text-xs">
-    &copy; 2024 Uurtsaikh Nyambat. All rights reserved.
-  </small>
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="mx-auto mt-24 max-w-6xl px-4 text-sm text-muted sm:px-8">
+  <div class="flex flex-wrap justify-between gap-2 border-t border-rule py-8">
+    <p>&copy; {year} Uurtsaikh Nyambat</p>
+    <p>Built with Astro and Tailwind CSS</p>
+  </div>
 </footer>

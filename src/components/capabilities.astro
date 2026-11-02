@@ -1,0 +1,49 @@
+---
+import { skills, technologies, type Capability } from "@/data";
+import Section from "./section-heading.astro";
+
+const groups: { caption: string; items: Capability[] }[] = [
+  { caption: "Disciplines", items: skills },
+  { caption: "Languages, frameworks and infrastructure", items: technologies },
+];
+// Bar scale is shared across both tables so a segment means one year everywhere.
+const scale = Math.max(...[...skills, ...technologies].map((c) => c.years));
+const byYears = (a: Capability, b: Capability) => b.years - a.years;
+---
+
+<Section id="capabilities" title="Capabilities">
+  <div class="grid gap-12 lg:grid-cols-2 lg:gap-10">
+    {
+      groups.map((group) => (
+        <table class="w-full self-start text-left">
+          <caption class="type-sub pb-3 text-left text-lg">{group.caption}</caption>
+          <thead class="sr-only">
+            <tr>
+              <th scope="col">Skill</th>
+              <th scope="col">Years</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...group.items].sort(byYears).map((c) => (
+              <tr class="border-t border-rule">
+                <th scope="row" class="py-2 pr-4 font-normal">{c.name}</th>
+                <td class="w-[1%] whitespace-nowrap py-2">
+                  <span class="flex items-center gap-3">
+                    <span class="flex gap-[3px]" aria-hidden="true">
+                      {Array.from({ length: scale }, (_, i) => (
+                        <span class={`h-3 w-2 ${i < c.years ? "bg-accent" : "bg-rule"}`} />
+                      ))}
+                    </span>
+                    <span class="w-14 text-sm text-muted">
+                      {c.years} {c.years === 1 ? "year" : "years"}
+                    </span>
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ))
+    }
+  </div>
+</Section>

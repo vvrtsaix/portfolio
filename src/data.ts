@@ -3,6 +3,7 @@ export type Experience = {
   company: string
   position: string
   details: string[]
+  stack?: string[]
 }
 
 export type Project = {
@@ -20,155 +21,138 @@ export type Certificate = {
   imageUrl: string
 }
 
+export type Capability = { name: string; years: number }
+
 export const experiences: Experience[] = [{
-  date: "Nov 2023 - Now",
-  company: "Zerotech",
-  position: "Senior Software Developer",
+  date: "Jan 2026 - Present",
+  company: "AND Global Pte. Ltd.",
+  position: "Senior Developer",
+  details: [],
+}, {
+  date: "Nov 2023 - Dec 2025",
+  company: "Zero Technology LLC",
+  position: "Team Tech Lead",
   details: [
-    "As a Development Team Lead, I spearheaded four projects.",
-    "Technologies: NodeJS, TailwindCSS, React, GoLang, NextJS and Microservice",
+    "Designed and deployed a payment gateway averaging 10 transactions per second, powering GS25 POS, Shunkhlai Petroleum POS, APU DOT and Orange App.",
+    "Delivered Orange App with loyalty, e-commerce and service ordering for 1M+ Shunkhlai Petroleum customers.",
+    "Built a B2B POS system for 7 partner companies and 200+ active users, covering loans, invoices and transactions with integrated loyalty.",
+    "Led development of the Shunkhlai Campus super-app, used by 2,000+ employees for food, parking, meeting rooms and service requests with centralized access control.",
+    "Built a central loyalty system integrated across 6 platforms (mobile apps, websites, POS) with real-time accrual and redemption across Shunkhlai Group companies.",
   ],
+  stack: ["Go", "Node.js", "Next.js", "React", "Tailwind CSS", "Microservices"],
 }, {
   date: "Feb 2023 - Nov 2023",
-  company: "Monosolution LLC",
+  company: "Mono Solution",
   position: "Senior Lead Software Developer",
   details: [
-    "As a Development Team Lead, I spearheaded two projects. The first, 'Detect HCC,' is a Clinical Research Management System has real-time communication (including chat, video, and phone), file system, and comprehensive clinical study capabilities. The second project, the 'Business Management System (BMS),' boasts features such as communication tools, file system, company newsfeed, HR, and CRM.",
-    "I trained my peers and used DevOps CI/CD.",
-    "Technologies: NodeJS, GraphQL, TailwindCSS, React, GoLang, NextJS, Flutter, MQTT and Microservice",
+    "Directed development of Detect HCC, a clinical research management system with real-time chat, video, file sharing and study management.",
+    "Led development of a Business Management System (BMS) with HR, CRM, communication tools and a company newsfeed.",
+    "Mentored peers in DevOps and set up CI/CD pipelines to speed up delivery.",
   ],
+  stack: ["Go", "Node.js", "GraphQL", "Next.js", "React", "Flutter", "MQTT", "Tailwind CSS", "Microservices"],
 }, {
   date: "Feb 2022 - Feb 2023",
-  company: "Fibo Cloud Pte Ltd",
+  company: "FIBO GLOBAL",
   position: "Chief Cloud Architect",
   details: [
-    "My role involved researching and developing features and services for public clouds, including cloud.mn and cloud.ttc.kz. I made significant contributions to the creation of Managed Kubernetes Service and App platform, as well as Simplehost for PHP-based applications.",
-    "I provided valuable DevOps and cloud service consulting services to other companies.",
-    "I instructed courses on Kubernetes and container technology.",
+    "Led R&D for public cloud services (cloud.mn, cloud.ttc.kz), including Managed Kubernetes, an app platform and Simplehost for PHP apps.",
+    "Delivered cloud and DevOps consulting for client companies.",
+    "Ran Kubernetes and containerization training for internal and external engineering teams.",
   ],
 }, {
   date: "Jun 2021 - Feb 2023",
   company: "TECH PARTNERS",
-  position: "Senior Software Engineer",
+  position: "Senior Software Engineer (part-time)",
   details: [
-    "I've had the privilege of working on diverse projects, including leading the development team for the travel website ITrip.mn, contributing to the Yuna restaurant app, and developing the student management system for Citi University.",
-    "Technologies: GoLang, React, NextJS, Flutter, tRPC, gRPC, TailwindCSS and DotNet",
+    "Led development of the ITrip.mn travel booking site.",
+    "Contributed to the Yuna restaurant app's digital ordering and loyalty features.",
+    "Built the student management system for Citi University.",
   ],
+  stack: ["Go", "React", "Next.js", "Flutter", "tRPC", "gRPC", ".NET", "Tailwind CSS"],
 }, {
-  date: "Jun 2020 - Feb 2022",
-  company: "Fibo Cloud Pte Ltd",
+  date: "Jan 2020 - Feb 2022",
+  company: "FIBO GLOBAL",
   position: "Senior Software Engineer",
   details: [
-    "I've played a pivotal role in diverse projects, including the Fibo Stack Private Cloud Management System, the Mongolian Public Cloud Service (Cloud.mn), and consulting on public cloud (AWS, GCP, Azure) and DevOps.",
-    "Technologies: AWS, GCP, Docker, Kubernetes, Linux, Openstack, Jenkins, Gitlab CI, GoLang, gRPC, React and Python",
+    "Built the Fibo Stack private cloud management system and the Mongolian public cloud Cloud.mn.",
+    "Consulted enterprise clients on AWS, GCP and Azure adoption and DevOps.",
+    "Built and tuned CI/CD pipelines in Jenkins and GitLab CI.",
   ],
+  stack: ["Go", "Python", "React", "gRPC", "OpenStack", "Kubernetes", "Docker", "AWS", "GCP", "Jenkins", "GitLab CI", "Linux"],
 }, {
   date: "Jul 2019 - Dec 2019",
-  company: "Eclinic",
+  company: "Towersoft",
   position: "Full Stack Engineer",
   details: [
-    "I was part of a three-engineer team that developed an ERP system for a hospital.",
-    "Technologies: Laravel (PHP), Vue (Javascript) and Java spring (Java)",
+    "One of three engineers building a hospital ERP system.",
   ],
+  stack: ["Laravel (PHP)", "Vue", "Spring (Java)"],
 }, {
-  date: "Jun 2019 - Jul 2019",
-  company: "Codocore",
+  date: "Jan 2019 - Jul 2019",
+  company: "Codo Core",
   position: "Mobile Application Developer",
   details: [
-    "I've worked on two React Native applications. The first is a mobile job app with separate interfaces for employees and employers. It's powered by a WordPress backend with GraphQL integration. The second is a nurse rental app.",
-    "Technologies: React Native, Wordpress and GraphQL",
+    "Built a React Native job app with separate employee and employer flows, backed by WordPress over GraphQL.",
+    "Built a React Native nurse booking app.",
   ],
+  stack: ["React Native", "WordPress", "GraphQL"],
 }]
 
-export const skills = [
-  "Software development (6 years)",
-  "DevOps (4 years)",
-  "System Architecture (4 years)",
-  "Cloud Solutions Architect (4 years)",
-  "Team management (3 years)",
-] as const;
+export const skills: Capability[] = [
+  { name: "Software development", years: 7 },
+  { name: "DevOps", years: 5 },
+  { name: "System Architecture", years: 5 },
+  { name: "Cloud architecture", years: 5 },
+  { name: "Team leadership", years: 4 },
+];
 
-export const technologies = [
-  "GoLang (5 years)",
-  "Javascript (6 years)",
-  "Typescript (4 years)",
-  "NextJS, React (6 years)",
-  "TailwindCSS (4 years)",
-  "Svelte, Vue (3 years)",
-  "React Native (6 years)",
-  "Flutter (4 years)",
-  "PHP (3 years)",
-  "Java (2 years)",
-  "Rust (1 years)",
-  "DotNet (1 years)",
-  "Elastic search (4 years)",
-  "Kubernetes (4 years)",
-  "AWS (4 years)",
-  "Docker (5 years)",
-  "RDS, SQL (5 years)",
-  "Postgres (6 years)",
-  "MongoDB (1 years)",
-  "GraphQL (4 years)",
-  "gRPC (2 years)",
-  "MQTT, RabbitMQ (3 years)",
-] as const;
+export const technologies: Capability[] = [
+  { name: "Go", years: 6 },
+  { name: "JavaScript, TypeScript", years: 7 },
+  { name: "Next.js, React", years: 7 },
+  { name: "React Native", years: 7 },
+  { name: "Flutter", years: 5 },
+  { name: "Kubernetes", years: 5 },
+  { name: "Docker", years: 6 },
+  { name: "AWS", years: 5 },
+  { name: "PostgreSQL, SQL", years: 7 },
+  { name: "GraphQL", years: 5 },
+  { name: "gRPC", years: 3 },
+  { name: "MQTT, RabbitMQ", years: 4 },
+];
 
 export const projects: Project[] = [
   {
-    title: "TTC Cloud",
-    description:
-      "I played a key role in the development of the TTC Cloud service, where I was directly responsible for creating SimpleHost, Object Storage, Application Platforms, and Managed Kubernetes services.",
-    tags: ["Managed Kubernetes Service", "Simplehost", "App platform", "Object storage", "Virtual Server"],
-    imageUrl: "/images/cloud-ttc.webp",
-    href: "https://cloud.ttc.kz/"
-  },
-  {
-    title: "Oblako.dev",
-    description:
-      "Oblako Dev is a straightforward deployment solution, akin to Vercel and Render. It seamlessly integrates with GitHub and GitLab, automating deployments for various programming languages and frameworks. Additionally, it offers hassle-free PHP hosting. I took on a solo development role for the entire system, spanning frontend, backend, server management, and Kubernetes orchestration.",
-    tags: ["Kubernetes", "NextJS", "tRPC", "gRPC", "GoLang", "BuildKit"],
-    imageUrl: "/images/oblako-dev.webp",
-    href: "https://oblako.dev"
-  },
-  {
     title: "ITrip.mn",
     description:
-      "This is a comprehensive travel website offering details on flights, trips, hotels, trains, and travel insurance. I was lead development team, primarily contribute on backend coding.",
-    tags: ["NextJS", "NodeJS", "GoLang", "DotNet", "MQTT", "3th party services"],
+      "Travel booking for flights, tours, hotels, trains and travel insurance. Led the development team and wrote most of the backend.",
+    tags: ["Next.js", "Node.js", "Go", ".NET", "MQTT", "Third-party APIs"],
     imageUrl: "/images/itrip-mn.webp",
     href: "https://itrip.mn/"
   },
   {
     title: "Absolute.mn",
     description:
-      "This is the official website for the Absolute English course. It's powered by a robust tech stack, featuring the Strapi CMS, Next.js for both frontend and backend, and Minio object storage, all seamlessly integrated to deliver a smooth and dynamic user experience.",
-    tags: ["NextJS", "Tailwind", "Framer Motion", "Strapi CMS"],
+      "Website for the Absolute English course, built on Strapi CMS, Next.js and MinIO object storage.",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Strapi CMS"],
     imageUrl: "/images/absolute-mn.webp",
     href: "https://absolute.mn"
   },
   {
     title: "Absolute Student App",
     description:
-      "This educational application is tailored for absolute students, offering a comprehensive set of features including online video and audio courses, reading materials, interactive tests, real-time news updates, and convenient access to student weekly schedules.",
-    tags: ["React Native", "Reanimated", "GoLang", "NextJS", "Minio S3"],
+      "Student app for Absolute English: video and audio lessons, reading materials, quizzes, news and weekly schedules.",
+    tags: ["React Native", "Reanimated", "Go", "Next.js", "MinIO"],
     imageUrl: "/images/absolute-student-app.webp",
     href: "https://apps.apple.com/us/app/absolute-student-app/id1658466540"
   },
   {
     title: "Yuna restaurant",
     description:
-      "This program empowers users to effortlessly browse the menu, place orders, and enjoy exclusive promotions. Specifically designed for Yuna restaurants, my role encompassed the development of the admin dashboard, backend services, and the mobile application.",
-    tags: ["Flutter", "GoLang", "NextJS", "Minio S3"],
+      "Menu browsing, ordering and promotions for Yuna restaurants. Built the admin dashboard, backend services and mobile app.",
+    tags: ["Flutter", "Go", "Next.js", "MinIO"],
     imageUrl: "/images/yuna-restaurant.webp",
     href: "https://apps.apple.com/mm/app/yuna-restaurant/id1625573111?platform=iphone"
-  },
-  {
-    title: "Personal Portfolio",
-    description:
-      "Crafted with care, this website stands as a platform to showcase my professional portfolio. Here, you can explore an array of my work and projects, providing a window into my skills and dedication to excellence.",
-    tags: ["Astro", "React", "Tailwind", "Framer Motion"],
-    imageUrl: "/images/portfolio.webp",
-    href: "https://portfolio-vvrtsaix.vercel.app"
   },
 ]
 
