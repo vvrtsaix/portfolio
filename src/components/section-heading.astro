@@ -1,3 +1,15 @@
-<h2 class="text-3xl font-medium capitalize mb-8 text-center">
-  <slot />
-</h2>
+---
+type Props = { id: string; title: string };
+const { id, title } = Astro.props;
+---
+
+<section
+  id={id}
+  aria-labelledby={`${id}-title`}
+  class="grid gap-6 border-t border-ink pt-6 mt-24 md:grid-cols-[13rem_1fr] md:gap-10 md:mt-32"
+>
+  <h2 id={`${id}-title`} class="type-heading text-[2.75rem]">{title}</h2>
+  <div class="min-w-0">
+    <slot />
+  </div>
+</section>

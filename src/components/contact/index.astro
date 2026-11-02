@@ -1,41 +1,40 @@
 ---
-import { motion } from "framer-motion";
-import SectionHeading from "../section-heading.astro";
+import Section from "../section-heading.astro";
 import ContactForm from "./form";
+
+const channels = [
+  { label: "Email", text: "vvrtsaix.n@gmail.com", href: "mailto:vvrtsaix.n@gmail.com" },
+  { label: "WhatsApp", text: "+976 8666 6217", href: "https://wa.me/97686666217" },
+  { label: "LinkedIn", text: "uurtsaikh-nyambat", href: "https://www.linkedin.com/in/uurtsaikh-nyambat" },
+  { label: "GitHub", text: "vvrtsaix", href: "https://github.com/vvrtsaix" },
+];
 ---
 
-<motion.section
-  client:load
-  id="contact"
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ duration: 1 }}
-  viewport={{ once: true }}
-  className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
->
-  <SectionHeading>Contact Me</SectionHeading>
-  <p class="text-gray-700 -mt-6 dark:text-white/80">
-    Please contact me directly at{" "}
-    <a class="underline" href="mailto:vvrtsaix.n@gmail.com">
-      vvrtsaix.n@gmail.com</a
-    >{" "}or through this form.
-  </p>
-  <ul class="mt-4">
-    <li>
-      <span class="font-bold mr-2">Whatsapp:</span><a
-        href="https://wa.me/97686666217"
-        target="_blank"
-        referrerpolicy="no-referrer">https://wa.me/97686666217</a
-      >
-    </li>
-    <li>
-      <span class="font-bold mr-2">Linkedin:</span><a
-        target="_blank"
-        href="https://www.linkedin.com/in/uurtsaikh-nyambat"
-        referrerpolicy="no-referrer"
-        >https://www.linkedin.com/in/uurtsaikh-nyambat</a
-      >
-    </li>
-  </ul>
-  <ContactForm client:load />
-</motion.section>
+<Section id="contact" title="Contact">
+  <div class="grid gap-12 lg:grid-cols-2 lg:gap-10">
+    <div>
+      <p class="type-sub max-w-[30ch] text-2xl leading-tight">
+        Hiring for platform, backend or DevOps work? Write directly or use the form.
+      </p>
+      <dl class="mt-6">
+        {
+          channels.map((c) => (
+            <div class="grid grid-cols-[6.5rem_1fr] gap-3 border-t border-rule py-2">
+              <dt class="text-muted">{c.label}</dt>
+              <dd class="min-w-0 break-words">
+                <a
+                  href={c.href}
+                  class="underline"
+                  {...(c.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
+                  {c.text}
+                </a>
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+    <ContactForm client:visible />
+  </div>
+</Section>

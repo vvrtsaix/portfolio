@@ -1,43 +1,128 @@
 ---
-import Header from "./header.tsx";
+import Header from "./header.astro";
 import Footer from "./footer.astro";
-import ThemeToggle from "@/components/theme-toggle.astro";
 
 type Props = {
   title: string;
+  description: string;
 };
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="!scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.site} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap"
+    />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <!-- Runs before paint so the saved/system theme never flashes. -->
+    <script is:inline>
+      try {
+        const saved = localStorage.getItem("theme");
+        const dark = saved
+          ? saved === "dark"
+          : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
   </head>
-  <body
-    class="bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90"
-  >
-    <div
-      class="bg-[#ecdbbf] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#947b62]"
+  <body class="bg-paper text-ink antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-2"
+      >Skip to content</a
     >
-    </div>
-    <div
-      class="bg-[#d7fbf5] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#638394]"
-    >
-    </div>
-    <Header client:load />
-    <ThemeToggle />
-    <slot />
+    <Header />
+    <main id="main" class="mx-auto max-w-6xl px-4 sm:px-8">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --paper: 237 239 242; /* #EDEFF2 */
+    --surface: 248 249 251;
+    --ink: 24 32 46; /* #18202E */
+    --muted: 91 101 115; /* #5B6573 */
+    --rule: 195 201 209; /* #C3C9D1 */
+    --accent: 35 67 216; /* #2343D8 cobalt */
+    color-scheme: light;
+  }
+  .dark {
+    --paper: 15 22 35; /* #0F1623 */
+    --surface: 22 31 48;
+    --ink: 220 226 234;
+    --muted: 146 157 172;
+    --rule: 48 61 82;
+    --accent: 147 166 255;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Width axis carries the hierarchy: ultra-condensed for display, normal for reading. */
+  .type-display {
+    font-stretch: 62%;
+    font-weight: 800;
+    line-height: 0.86;
+    letter-spacing: -0.01em;
+  }
+  .type-heading {
+    font-stretch: 70%;
+    font-weight: 700;
+    line-height: 0.95;
+  }
+  .type-sub {
+    font-stretch: 85%;
+    font-weight: 650;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>

@@ -1,18 +1,61 @@
 ---
 import { projects } from "@/data";
-import SectionHeading from "../section-heading.astro";
-import ProjectItem from "./item";
+import Section from "../section-heading.astro";
+
+const linkLabel = (href: string) => {
+  const host = new URL(href).hostname.replace(/^www\./, "");
+  return host === "apps.apple.com" ? "App Store" : host;
+};
 ---
 
-<section id="projects" class="scroll-mt-28 mb-28">
-  <SectionHeading>My Projects</SectionHeading>
-  <div class="flex flex-col gap-4">
+<Section id="projects" title="Projects">
+  <ul class="flex flex-col gap-12">
     {
-      projects.map((project, index) => (
-        <Fragment key={index}>
-          <ProjectItem client:load {...project} />
-        </Fragment>
+      projects.map((p) => (
+        <li class="grid gap-5 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:gap-8">
+          <a
+            href={p.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            tabindex="-1"
+            aria-hidden="true"
+            class="group relative block aspect-[16/10] self-start overflow-hidden border border-rule bg-surface"
+          >
+            <img
+              src={p.imageUrl}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 h-full w-full scale-110 object-cover opacity-40 blur-2xl"
+            />
+            <img
+              src={p.imageUrl}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="relative h-full w-full object-contain p-3 drop-shadow-md transition-transform duration-300 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
+            />
+          </a>
+          <div class="max-w-[65ch]">
+            <h3 class="type-heading text-[1.75rem]">{p.title}</h3>
+            <p class="mt-3">{p.description}</p>
+            <dl class="mt-4 grid grid-cols-[4.5rem_1fr] gap-x-3 gap-y-1 text-[0.9375rem]">
+              <dt class="text-muted">Stack</dt>
+              <dd>{p.tags.join(", ")}</dd>
+              {p.href && (
+                <>
+                  <dt class="text-muted">Live</dt>
+                  <dd>
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" class="underline">
+                      {linkLabel(p.href)}
+                    </a>
+                  </dd>
+                </>
+              )}
+            </dl>
+          </div>
+        </li>
       ))
     }
-  </div>
-</section>
+  </ul>
+</Section>
