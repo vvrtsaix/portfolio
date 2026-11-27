@@ -1,87 +1,31 @@
 # Uurtsaikh Nyambat Portfolio
 
-Personal portfolio project. [Preview](https://portfolio-vvrtsaix.vercel.app/)
+Personal portfolio site. [Preview](https://portfolio-vvrtsaix.vercel.app/)
 
----
-
-- NodeJS >= 18
-- [Typescript 5.2](https://www.typescriptlang.org/) - Types for JS
-- [Astro](https://docs.astro.build/en/getting-started/) - Astro web framework
-- [Tailwind-CSS](https://tailwindcss.com/docs/guides/vite) - Utility css
-- [React 18](https://react.dev/) - UI library
-
----
+Static site built with [Astro](https://docs.astro.build/) and [Tailwind CSS](https://tailwindcss.com/), deployed on Vercel.
 
 ## Folder structure
 
-- public - public assets ex: images, favicon.svg and language jsons
-- src
-  - components - general usage components
-  - layouts - main layout
-  - pages - all pages of platform
-  - emails - email templates
-  - data.ts - main data source
-  - utils.ts - utility functions
-- astro-i18next.config.ts - Astro i18n config file
-- tailwind.config.cjs - Tailwind config file
-- astro.config.mjs - Astro config file
+- `public` - static assets (favicons, CV)
+- `src`
+  - `assets` - images and fonts
+  - `components` - page sections
+  - `layouts` - main layout, header, footer
+  - `pages` - routes
+  - `styles` - global CSS
+  - `data.ts` - main data source
 
-## Setup
+## Commands
 
-### 1. Environment Setup
+Requires Node.js 24 (see `.nvmrc`) and pnpm.
 
-- Install nodejs >= v18 (recommended installing with [NVM](https://github.com/nvm-sh/nvm))
-- Install node module (`yarn install`)
-- Set up necessary variables in .env
+```bash
+pnpm install   # install dependencies
+pnpm dev       # start dev server
+pnpm build     # build to dist/
+pnpm preview   # serve built files
+```
 
-  - env example
+## Deployment
 
-  ```env
-  RESEND_API_KEY=******
-  ```
-
-### 2. Recommended vscode extensions
-
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-
-## Run commands
-
-- Install node modules
-
-  ```bash
-  yarn install
-  ```
-
-- Start development service
-
-  ```bash
-  yarn dev
-  ```
-
-- Build the project
-
-  ```bash
-  yarn build
-  ```
-
-- Start server with built files
-
-  ```bash
-  yarn preview
-  ```
-
-- Generate i18n pages
-
-  ```bash
-  npx astro-i18next generate
-  ```
-
-## Production and Development deployment
-
-To main, you can merge the main branch. Thus, vercel will execute out an automatic application deployment.
-
-- On the main branch, producation deployment is configured for CI/CD
-
-  - Domain: [https://portfolio-vvrtsaix.vercel.app/]
+Pushing to `main` triggers an automatic Vercel production deployment.

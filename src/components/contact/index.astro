@@ -1,6 +1,5 @@
 ---
 import Section from "../section-heading.astro";
-import ContactForm from "./form.astro";
 
 const channels = [
   { label: "Email", text: "vvrtsaix.n@gmail.com", href: "mailto:vvrtsaix.n@gmail.com" },
@@ -11,30 +10,25 @@ const channels = [
 ---
 
 <Section id="contact" title="Contact">
-  <div class="grid gap-12 lg:grid-cols-2 lg:gap-10">
-    <div>
-      <p class="type-sub max-w-[30ch] text-2xl leading-tight">
-        Hiring for platform, backend or DevOps work? Write directly or use the form.
-      </p>
-      <dl class="mt-6">
-        {
-          channels.map((c) => (
-            <div class="grid grid-cols-[6.5rem_1fr] gap-3 border-t border-rule py-2">
-              <dt class="text-muted">{c.label}</dt>
-              <dd class="min-w-0 wrap-break-word">
-                <a
-                  href={c.href}
-                  class="underline"
-                  {...(c.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                >
-                  {c.text}
-                </a>
-              </dd>
-            </div>
-          ))
-        }
-      </dl>
-    </div>
-    <ContactForm />
-  </div>
+  <p class="type-sub max-w-[30ch] text-2xl leading-tight">
+    Hiring for platform, backend or DevOps work? Write directly.
+  </p>
+  <dl class="mt-6">
+    {
+      channels.map((c) => (
+        <div class="grid grid-cols-[6.5rem_1fr] gap-3 border-t border-rule py-2">
+          <dt class="text-muted">{c.label}</dt>
+          <dd class="min-w-0 wrap-break-word">
+            <a
+              href={c.href}
+              class="underline"
+              {...(c.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            >
+              {c.text}
+            </a>
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
 </Section>
